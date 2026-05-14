@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بروتوكول QR | المنظومة المتكاملة للمطاعم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
+        .gold-text { background: linear-gradient(135deg, #d4af37 0%, #f9e2af 50%, #b8860b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+        .feature-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(212, 175, 55, 0.1); transition: all 0.3s ease; }
+        .feature-card:hover { border-color: #d4af37; transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5">
+        <div class="flex items-center space-x-2 space-x-reverse">
+            <i data-lucide="crown" class="text-yellow-500 w-8 h-8"></i>
+            <span class="text-2xl font-black tracking-tighter uppercase">PROTOCOL <span class="gold-text">QR</span></span>
+        </div>
+        <button onclick="openPurchaseModal()" class="gold-bg text-black px-6 py-2 rounded-full font-bold text-sm">ابدأ رحلتك</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-20 px-6 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05),transparent_70%)] -z-10"></div>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 leading-none">سيطرة كاملة.<br><span class="gold-text">فخامة مطلقة.</span></h1>
+        <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-10">أكثر من مجرد منيو QR؛ نحن نقدم لك ذكاءً اصطناعياً يدير طاولاتك، موظفيك، وأرباحك بلمسة واحدة.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="openPurchaseModal()" class="gold-bg text-black px-10 py-4 rounded-2xl font-black text-lg shadow-xl shadow-yellow-500/20">امتلك النظام الآن (35,000 دج)</button>
+        </div>
+    </header>
+
+    <!-- New Features Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">لماذا يختارنا المحترفون؟</h2>
+            <div class="h-1 w-20 gold-bg mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="feature-card p-8 rounded-3xl">
+                <i data-lucide="zap" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">سرعة التنفيذ</h3>
+                <p class="text-slate-400">تصل الطلبات من الطاولة إلى المطبخ في أقل من $0.5$ ثانية بفضل تقنية WebSockets.</p>
+            </div>
+            <div class="feature-card p-8 rounded-3xl">
+                <i data-lucide="bar-chart-3" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">تحليلات المبيعات</h3>
+                <p class="text-slate-400">تعرف على الطبق الأكثر ربحية وساعات الذروة في مطعمك بتقارير أسبوعية مفصلة.</p>
+            </div>
+            <div class="feature-card p-8 rounded-3xl">
+                <i data-lucide="shield-check" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">أمان سحابي</h3>
+                <p class="text-slate-400">بياناتك مشفرة ومحفوظة في خوادم قوية تضمن عدم ضياع أي طلب مهما حدث.</p>
+            </div>
+            <div class="feature-card p-8 rounded-3xl">
+                <i data-lucide="users" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">إدارة الموظفين</h3>
+                <p class="text-slate-400">نظام خاص للنادلين يوزع المهام ويراقب سرعة تلبية الطلبات لكل موظف.</p>
+            </div>
+            <div class="feature-card p-8 rounded-3xl">
+                <i data-lucide="languages" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">تعدد اللغات</h3>
+                <p class="text-slate-400">قائمة الطعام تترجم نفسها آلياً للزبائن الأجانب (عربي، إنجليزي، فرنسي).</p>
+            </div>
+            <div class="feature-card p-8 rounded-3xl">
+                <i data-lucide="smartphone" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">تطبيق بدون تحميل</h3>
+                <p class="text-slate-400">يعمل النظام كـ PWA، أي أنه يفتح كالتطبيق تماماً دون حاجة الزبون لتحميل أي شيء.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white/5 py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">ماذا يقول شركاء النجاح؟</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 p-8 rounded-2xl italic border-r-4 border-yellow-500">
+                    "منذ استخدامي لبروتوكول QR، زادت مبيعاتي بنسبة $30\%$ وانخفضت أخطاء الطلبات تماماً. تجربة ملكية بكل معنى الكلمة."
+                    <p class="mt-4 font-bold not-italic text-yellow-500 text-sm">- مدير مطعم لوريان، الجزائر</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl italic border-r-4 border-yellow-500">
+                    "أفضل استثمار قمت به لمطعمي. سرعة النظام في الجزائر فاقت توقعاتي، والزبائن مبهورون بالمنيو الذهبي."
+                    <p class="mt-4 font-bold not-italic text-yellow-500 text-sm">- صاحب مطعم فينا، وهران</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-10 text-center border-t border-white/5">
+        <p class="text-slate-500">بروتوكول QR - القوة التكنولوجية لمستقبل المطاعم الفاخرة.</p>
+    </footer>
+
+    <!-- Purchase Modal (Improved) -->
+    <div id="purchaseModal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-yellow-500/20 w-full max-w-md rounded-3xl p-8 relative">
+            <button onclick="closePurchaseModal()" class="absolute top-4 left-4 text-slate-500 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold gold-text">انضم للنخبة</h3>
+                <p class="text-slate-400 text-sm">أدخل بياناتك وسنتواصل معك خلال أقل من ساعة.</p>
+            </div>
+            <form id="purchaseForm" class="space-y-4">
+                <input type="text" id="buyerName" required placeholder="اسمك الكامل" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-yellow-500">
+                <input type="text" id="buyerRestaurant" required placeholder="اسم مطعمك" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-yellow-500">
+                <input type="tel" id="buyerPhone" required placeholder="رقم الهاتف" dir="ltr" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-yellow-500">
+                <button type="submit" class="w-full gold-bg text-black font-bold py-4 rounded-xl text-lg hover:scale-105 transition-transform">تأكيد الطلب (35,000 دج)</button>
+                <button type="button" onclick="closePurchaseModal()" class="w-full text-slate-500 text-sm">إلغاء والعودة</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC-MauXMXNI5k9CxyoXyxhKw0YQNyLXgVs",
+            authDomain: "azaaza-1b7ef.firebaseapp.com",
+            projectId: "azaaza-1b7ef",
+            storageBucket: "azaaza-1b7ef.firebasestorage.app",
+            messagingSenderId: "831188915337",
+            appId: "1:831188915337:web:d19af9175967f24af5a258"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.openPurchaseModal = () => document.getElementById('purchaseModal').classList.remove('hidden');
+        window.closePurchaseModal = () => document.getElementById('purchaseModal').classList.add('hidden');
+
+        document.getElementById('purchaseForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "جاري الحفظ في السحابة...";
+            btn.disabled = true;
+
+            try {
+                await addDoc(collection(db, 'artifacts', 'azaaza-1b7ef', 'public', 'data', 'sales_leads'), {
+                    customerName: document.getElementById('buyerName').value,
+                    restaurantName: document.getElementById('buyerRestaurant').value,
+                    phone: document.getElementById('buyerPhone').value,
+                    timestamp: serverTimestamp()
+                });
+                alert("شكراً لثقتك! تم استلام طلبك، وسنتصل بك قريباً لتنصيب النظام.");
+                closePurchaseModal();
+            } catch (err) {
+                alert("حدث خطأ، يرجى التحقق من اتصالك بالإنترنت.");
+            } finally {
+                btn.innerText = "تأكيد الطلب (35,000 دج)";
+                btn.disabled = false;
+            }
+        };
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
